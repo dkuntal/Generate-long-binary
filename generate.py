@@ -26,17 +26,21 @@ def gen_all_save(filename,len1):
         output.write(i+'\n')
     output.close()
     
-def gen_str(infile_name,outfile_name,n,pop_size):
+def gen_pop(infile_name,outfile_name,n,pop_size):
     infile = open(infile_name,'r').read()
     bins = infile.split('\n')
     outfile = open(outfile_name,'w')
     for i in range(pop_size):
         for j in range(n):
-            outfile.write(bins[np.random.randint(len(bins))])
+#             p = np.random.randint(len(bins)-1)
+#             print(i,j,p,bins[p])
+            outfile.write(bins[np.random.randint(len(bins)-1)])
+#             if bins[p] == '':
+#                 j -= 1
             if j < n-1:
                 outfile.write(' ')
         outfile.write('\n')
         
 gen_all_save("files/bin_small.txt",7)
 
-gen_str("files/bin_small.txt","files/bin_str.txt",75,10)
+gen_pop("files/bin_small.txt","files/bin_str.txt",75,10)
