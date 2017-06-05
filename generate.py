@@ -43,4 +43,4 @@ def gen_pop(infile_name,outfile_name,n,pop_size):
         
 gen_all_save("files/bin_small.txt",7)
 
-gen_pop("files/bin_small.txt","files/bin_str.txt",75,10)
+gen_pop("files/bin_small.txt","files/bin_pop.txt",75,10)
